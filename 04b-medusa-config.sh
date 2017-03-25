@@ -14,20 +14,6 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 #######################
-# Dependencies
-#######################
-apt-get update && sudo apt-get install unrar-free git-core openssl libssl-dev python2.7
-
-#######################
-# Install
-#######################
-mkdir /opt/medusa && sudo chown kurt:kurt /opt/medusa
-git clone https://github.com/pymedusa/Medusa.git /opt/medusa
-
-# Run SickRage for the first time to create default config files
-timeout 5s python /opt/medusa/SickBeard.py
-
-#######################
 # Configure
 #######################
 sed -i "s/^tv_download_dir =.*/tv_download_dir = \/home\/$username\/nzbget\/completed\/tv/g" /opt/medusa/config.ini
