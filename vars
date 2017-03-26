@@ -1,0 +1,44 @@
+# Username and Password
+username="kurt"
+passwd="emunation"
+
+# Networking
+hostname="fileserver"
+ipaddr="192.168.0.4"
+fqdn=""
+timezone="Europe/London"
+
+# Rclone Crypt
+encrypted="AMZe"
+local="LOCAL"
+overlayfuse="ALL"
+
+# Plex
+plexToken="LdtkHz1D8sBs4zQpjwbu"
+plexUsername="Proelior"
+plexPassword="emunation"
+
+# NZBGet
+nzbGetTesting="yes"
+
+# OpenSubTitles
+openSubtitlesUsername="Proelior"
+openSubtitlesPassword="Emunation1942"
+openSubtitlesLang="English"
+
+# News Server
+newsServer="Newsleecher"
+nsHostname="news.newsleecher.com"
+nsPort="563"
+nsUsername="proelior"
+nsPassword="emunation"
+nsEncryption="yes"
+nsConnections="30"
+nsRetention="2900"
+
+# ComicVine
+# Optional Mylar / Comic Book Support
+comicvineAPI=""
+
+# rTorrent/ruTorrent
+torrentPort="61347"
