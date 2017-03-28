@@ -8,15 +8,15 @@ Easily install rTorrent/ruTorrent for downloading torrents. (Post-processing com
 ## GETTING STARTED
 Please understand that the SOFTWARE scripts **WILL NOT** work without modifications unless you have successfully run the `00-setup.sh` and `01-rclone-acd.sh` scripts. These first 2 scripts create users, directories, and permissions that every other script relies on.
 
-* [Getting Started](https://github.com/proelior/PlexInTheCloud/wiki/Getting_Started)
+* [Getting Started](https://github.com/chrisanthropic/PlexInTheCloud/wiki/Getting_Started)
 
 ## SOFTWARE
 Once you have completed the GETTING STARTED section you can run any of the following scripts to install and configure the software of your choice.
 
-* [Software List](https://github.com/proelior/PlexInTheCloud/wiki/SOFTWARE%20LIST)
+* [Software List](https://github.com/chrisanthropic/PlexInTheCloud/wiki/SOFTWARE%20LIST)
 
 # TODO
-[Issues](https://github.com/proelior/PlexInTheCloud/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)
+[Issues](https://github.com/chrisanthropic/PlexInTheCloud/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement)
 
 # AVAILABLE SOFTWARE
 ## Rclone / Crypt
