@@ -83,11 +83,14 @@ tee "/home/$username/nzbget/scripts/uploadMovies.sh" > /dev/null <<EOF
 
 # Rclone upload to Amazon Cloud Drive
 
+#Set variables
+today=$(date +%Y-%m-%d)
+
 # Wait for NZBget/Sickrage to finish moving files
 sleep 10s
 
 # Upload
-rclone move -c /home/$username/$local/movies $encrypted:movies
+rclone move -c -v --log-file=/home/$username/scripts/logs/uploadACD.${today}.log /home/$username/$local/movies $encrypted:movies
 
 # Tell Plex to update the Library
 wget http://localhost:32400/library/sections/$movieID/refresh?X-Plex-Token=$token
