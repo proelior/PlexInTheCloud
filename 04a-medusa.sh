@@ -16,7 +16,7 @@ fi
 #######################
 # Dependencies
 #######################
-apt-get update && sudo apt-get install unrar-free git-core openssl libssl-dev python2.7
+apt-get update && sudo apt-get install unrar-free git-core openssl libssl-dev python2.7 -y
 
 #######################
 # Install
