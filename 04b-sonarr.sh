@@ -42,6 +42,11 @@ chown -R $username:$username /opt/NzbDrone
 # Configure
 #######################
 
+## Post-Processing
+# nzbget
+sed -i "s/^Category2.Name=.*/Category2.Name=tv/g" /opt/nzbget/nzbget.conf
+sed -i "s|^Category2.DestDir=.*|Category2.DestDir=/home/$username/nzbget/completed/tv|g" /opt/nzbget/nzbget.conf
+sed -i "s/^Category2.PostScript=.*/Category2.PostScript=nzbToNzbDrone.py, Logger.py, uploadTV.sh/g" /opt/nzbget/nzbget.conf
 
 #######################
 # Structure
