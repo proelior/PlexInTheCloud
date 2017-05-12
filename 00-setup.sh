@@ -48,6 +48,18 @@ echo $username:$passwd | chpasswd
 adduser $username sudo
 sed --in-place 's/^#\s*\(%sudo\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
 
+# Install & Configure SSH
+sed -i "s/.*PermitRootLogin.*/PermitRootLogin no/g" /etc/ssh/sshd_config
+sed -i "s/.*PasswordAuthentication.*/PasswordAuthentication no/g" /etc/ssh/sshd_config
+echo 'AddressFamily inet' | sudo tee -a /etc/ssh/sshd_config
+
+
+# Install & Configure Fail2Ban
+apt-get -y install fail2ban
+
+sed 's/\(^[[:alpha:]]\)/# \1/' /etc/fail2ban/fail2ban.conf | sudo tee /etc/fail2ban/fail2ban.local &> /dev/null
+sed 's/\(^[a-z tab]\)/# \1/' /etc/fail2ban/jail.conf | sudo tee /etc/fail2ban/jail.local &> /dev/null
+
 # Allow SSH
 apt-get -y install ufw
 ufw allow ssh
