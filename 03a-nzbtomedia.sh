@@ -22,6 +22,9 @@ apt-get install -y unrar unzip tar p7zip ffmpeg
 # Install
 #######################
 git clone https://github.com/clinton-hall/nzbToMedia.git /home/$username/nzbget/scripts
+cd /home/$username/nzbget/scripts
+git checkout nightly
+git pull
 
 #######################
 # Configure
