@@ -53,15 +53,18 @@ sed -i "s/^Category2.PostScript=.*/Category2.PostScript=nzbToNzbDrone.py, Logger
 #######################
 # Create our local directory
 mkdir -p /home/$username/$local/tv
+mkdir -p /home/$username/$local/anime
 
 # Create our directory for completed downloads
 mkdir -p /home/$username/nzbget/completed/tv
+mkdir -p /home/$username/nzbget/completed/anime
 
 # Create our ACD directory
 ## Run the commands as our user since the rclone config is stored in the user's home directory and root can't access it.
 su $username <<EOF
 cd /home/$username
 rclone mkdir $encrypted:tv
+rclone mkdir $encrypted:anime
 EOF
 
 # Create our Plex library
@@ -115,8 +118,8 @@ Description=Sonarr Daemon
 After=syslog.target network-online.target
 
 [Service]
-User=proelior
-Group=proelior
+User=$username
+Group=$username
 
 Type=simple
 ExecStart=/usr/bin/mono /opt/NzbDrone/NzbDrone.exe
